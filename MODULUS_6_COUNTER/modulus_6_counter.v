@@ -26,11 +26,10 @@ endmodule
 
 
 module modulus_6_counter_bh(q,clk,rst);
-wire [2:0]d;
+
 input clk,rst;
 output reg [2:0]q;
 
-assign d=q+1;
 always@(negedge clk or posedge rst)begin
   if(q==3'd6 ||rst)
     q<=1'b0;

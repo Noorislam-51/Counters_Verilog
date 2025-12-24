@@ -49,11 +49,9 @@ endmodule
 
 // ASYNC UP-COUNTER_BEHAVIORAL--------------------------
 module up_counter_async_bh(q,clk,rst);
-wire [3:0]d;
 input clk,rst;
 output reg [3:0]q;
 
-assign d=~q;
 always@(negedge clk or posedge rst)begin
   if(rst)
     q<=1'b0;
@@ -64,11 +62,9 @@ endmodule
 
 // SYNC UP-COUNTER_BEHAVIORAL--------------------------
 module up_counter_sync_bh(q,clk,rst);
-wire [3:0]d;
 input clk,rst;
 output reg [3:0]q;
 
-assign d=q+1;
 always@(negedge clk or posedge rst)begin
   if(rst)
     q<=1'b0;
